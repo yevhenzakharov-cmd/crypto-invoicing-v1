@@ -33,7 +33,7 @@ const theme = darkTheme({
 });
 theme.colors.modalBackground = "#0A0A0C";
 theme.colors.modalBorder = "#2A2A31";
-theme.fonts.body = "'IBM Plex Sans', system-ui, sans-serif";
+theme.fonts.body = "'Fira Mono', ui-monospace, monospace";
 
 function AuthLayer({ children }: { children: ReactNode }) {
   const pathname = usePathname();

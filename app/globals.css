@@ -18,14 +18,15 @@
   --danger: #ffb3b3;
   --danger-line: #5a2a2e;
   --ok: #3ddc97;
-  --sans: "IBM Plex Sans", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* One monospace family across the whole site. */
+  --sans: "Fira Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --mono: "Fira Mono", ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--text); }
-body { font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+body { font-family: var(--sans); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
 a { color: var(--text-2); }
 a:hover { color: #fff; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -101,10 +102,10 @@ select option { background: var(--panel); }
 
 /* landing */
 .hero { padding: 88px 0 56px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
-.hero h1 { margin: 0; font-size: clamp(40px, 6vw, 76px); line-height: 1.02; font-weight: 500; letter-spacing: -0.025em; }
+.hero h1 { margin: 0; font-size: clamp(32px, 4.6vw, 60px); line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; }
 .grad { background: linear-gradient(90deg, #f07d96, #6fd1c3); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.section { padding-top: 96px; display: flex; flex-direction: column; gap: 28px; }
-.section h2 { margin: 0; font-size: clamp(28px, 3.6vw, 42px); font-weight: 500; letter-spacing: -0.015em; }
+.section { padding-top: 24px; display: flex; flex-direction: column; gap: 28px; }
+.section h2 { margin: 0; font-size: clamp(24px, 3vw, 36px); font-weight: 500; letter-spacing: -0.01em; }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 .card { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
 .card h3 { margin: 0; font-size: 20px; font-weight: 500; }
@@ -139,4 +140,26 @@ select option { background: var(--panel); }
 
 @media print {
   .no-print { display: none !important; }
+}
+
+/* ── Circuit traces (section lines) ───────────────────────────── */
+.circuit-frame { position: relative; }
+.circuit-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.trace-base { stroke: var(--line-2); stroke-width: 1; fill: none; }
+.trace-packet { fill: none; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 34 966; animation: trace-packet 4.5s linear infinite; }
+.trace-packet.pink { stroke: #f07d96; filter: drop-shadow(0 0 5px #f07d96); }
+.trace-packet.teal { stroke: #6fd1c3; filter: drop-shadow(0 0 5px #6fd1c3); animation-delay: 2.25s; }
+.trace-node { transform-box: fill-box; transform-origin: center; animation: trace-node 2s ease-in-out infinite; }
+@keyframes trace-packet { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -1000; } }
+@keyframes trace-node { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.35); } }
+.circuit-divider { position: relative; height: 72px; margin-top: 96px; }
+@media (prefers-reduced-motion: reduce) {
+  .trace-packet, .trace-node { animation: none; }
+  .trace-packet { stroke-dasharray: none; opacity: 0.35; }
+}
+.frame-inner { padding: 0 40px 104px; }
+.frame-inner .hero { padding-top: 72px; }
+@media (max-width: 720px) {
+  .frame-inner { padding: 0 18px 88px; }
+  .frame-inner .hero { padding-top: 48px; }
 }

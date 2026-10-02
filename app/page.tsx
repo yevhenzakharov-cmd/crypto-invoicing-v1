@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { CircuitDivider, CircuitFrame } from "@/components/Circuit";
 
 const features = [
   {
@@ -60,6 +61,8 @@ export default function Home() {
     <>
       <SiteHeader />
       <main className="wrap" id="top">
+        <CircuitFrame>
+        <div className="frame-inner">
         <section className="hero">
           <div className="eyebrow" style={{ border: "1px solid var(--line-2)", padding: "6px 10px" }}>
             Non-custodial · no database · encrypted templates
@@ -104,7 +107,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="features">
+        </div>
+        </CircuitFrame>
+
+        <section className="section" id="features" style={{ paddingTop: 56 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div className="eyebrow">01 · Features</div>
             <h2>Web3 payments made simple</h2>
@@ -122,6 +128,7 @@ export default function Home() {
           </div>
         </section>
 
+        <CircuitDivider flip />
         <section className="section" id="privacy">
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div className="eyebrow">02 · Privacy by design</div>
@@ -141,6 +148,7 @@ export default function Home() {
           </div>
         </section>
 
+        <CircuitDivider />
         <section className="section" id="faq">
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <div className="eyebrow">03 · FAQ</div>

@@ -1,9 +1,7 @@
-import "@fontsource/ibm-plex-sans/400.css";
-import "@fontsource/ibm-plex-sans/500.css";
-import "@fontsource/ibm-plex-sans/600.css";
-import "@fontsource/ibm-plex-sans/400-italic.css";
-import "@fontsource/ibm-plex-mono/400.css";
-import "@fontsource/ibm-plex-mono/500.css";
+// Fira Mono, self-hosted (no requests to Google Fonts).
+import "@fontsource/fira-mono/400.css";
+import "@fontsource/fira-mono/500.css";
+import "@fontsource/fira-mono/700.css";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
