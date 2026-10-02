@@ -1,0 +1,36 @@
+{
+  "name": "crypto-invoicing-v1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "@rainbow-me/rainbowkit": "^2.2.11",
+    "@react-pdf/renderer": "^4.9.0",
+    "@tanstack/react-query": "^5.104.1",
+    "fflate": "^0.8.3",
+    "iron-session": "^8.0.4",
+    "next": "^16.3.8",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "viem": "^2.57.2",
+    "wagmi": "^2.19.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  }
+}
